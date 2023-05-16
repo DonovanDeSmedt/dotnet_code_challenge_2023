@@ -5,8 +5,11 @@ namespace CodeChallenge2023
     {
         public async Task<double> GetBmi()
         {
-            var result = await Task.WhenAll(PersonInformationService.GetLength(), PersonInformationService.GetWeight());
-            return await CalculateBmi(result[0], result[1]);
+            // TODO: Replace the following 2 line's with a more performant solution.w
+            var length = await PersonInformationService.GetLength();
+            var weight = await PersonInformationService.GetWeight();
+
+            return await CalculateBmi(length, weight);
         }
 
         private Task<double> CalculateBmi(int length, int weight)

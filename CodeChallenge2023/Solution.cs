@@ -5,7 +5,7 @@ namespace CodeChallenge2023
     {
         public async Task<double> GetBmi()
         {
-            // TODO: Replace the following 2 line's with a more performant solution.w
+            // TODO: Replace the following 2 line's with a more performant solution.
             var length = await PersonInformationService.GetLength();
             var weight = await PersonInformationService.GetWeight();
 
